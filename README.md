@@ -12,6 +12,13 @@ Requirements:
 
 Environment: 
 
+We have to install hdf5 for DNN:
+
+```BASH
+ brew install hdf5
+ brew install graphviz
+```
+
 For installing the virtual environment you can either use the Makefile and run `make setup` or install it manually with the following commands: 
 
 ```Bash
@@ -37,6 +44,20 @@ In order to test that predict works on a test set you created run:
 
 ```bash
 python example_files/predict.py models/linear_regression_model.sav data/X_test.csv data/y_test.csv
+```
+If you already have hdf5
+```BASH
+export HDF5_DIR=/opt/homebrew/Cellar/hdf5/1.12.2
+```
+otherwise, if you have just installed hdf5 with brew, then
+```BASH
+export HDF5_DIR=/opt/homebrew/Cellar/hdf5/1.12.2_2
+```
+
+```BASH
+pip install -U pip
+pip install --no-binary=h5py h5py
+pip install -r requirements.txt
 ```
 
 ## Limitations
